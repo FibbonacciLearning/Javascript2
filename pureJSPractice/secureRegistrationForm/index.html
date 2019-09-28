@@ -1,0 +1,84 @@
+<head>
+    <title>Secure form with HTML, CSS and JS</title>
+    <link rel="stylesheet" href="css/style.css"/>
+    <script src="https://kit.fontawesome.com/b32bed5106.js"></script>
+</head>
+<body>
+    <div id="main_part">
+        <div id="signup">
+            <h1 id="title">
+                <i class="fas fa-user-plus"></i>
+            </h1>
+            <form method="POST">
+                <div id="input">
+                    <i class="far fa-user"></i>
+                    <input type="text", name="u_name", required = "required", placeholder="Enter your name"/>
+                </div>
+                <div id="input">
+                    <i class="far fa-envelope-open"></i>
+                    <input type="email", name="u_email", placeholder="Enter your email"/>
+                </div>
+                <div id="input">
+                    <i class="fas fa-key"></i>
+                    <input type="password", name="u_pass1", placeholder="Enter your password"/>
+                </div>
+                <div id="input">
+                    <i class="fas fa-key"></i>
+                    <input type="password", name="u_pass2", placeholder="Re-enter your password"/>
+                </div>
+                <div id="input">
+                    <i class="fas fa-phone-alt"></i>
+                    <input type="tel", name="u_phone", placeholder="Enter your 10 digit telephone number"/>
+                </div>
+                <div id="input">
+                    <i class="fas fa-venus-mars"></i>    
+                    <select name="u_gen", placeholder="Select Gender">
+                        <option value="">Select your Gender</option>
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                </div>
+                <div id="input">
+                    <i class="fas fa-birthday-cake"></i>
+                    <input type="date" name="u_dob", placeholder="Enter your date of birth"/>
+                </div>
+                <div id="input">
+                    <i class="fas fa-globe"></i>
+                    <select name="u_country", placeholder="Select Country">
+                        <option value="">Select Country</option>
+                        <option value="India">India</option>
+                        <option value="US">US</option>
+                    </select>
+                </div>
+                <center>
+                    <input id="btn", type="submit", name="singnup", value="Submit"/>
+                    <input id="btn", type="submit", value="Reset"/>
+                </center>
+                
+            </form>
+        </div>
+        <div id="login">
+            <h1 id="title">
+                <i class="fas fa-sign-in-alt"></i>
+            </h1>
+            <form method="POST">
+                <div id="input">
+                    <i class="far fa-envelope-open"></i>
+                    <input type="email", name="u_email", placeholder="Enter your email"/>
+                </div>
+                <div id="input">
+                    <i class="fas fa-key"></i>
+                    <input type="password", name="u_pass1", placeholder="Enter your password"/>
+                </div>
+                <center>
+                    <input id="btn", type="submit", name="Login", value="Login"/>
+                    <input id="btn", type="submit", value="Reset"/>
+                </center>
+                
+                <center><p id="for_pass">Forget Password</p></center>
+            </form> 
+        
+
+        </div>
+    </div>
+</body>
