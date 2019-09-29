@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>SUPER CALCULATOR</title>
+<script type="text/javascript" src="C:\Users\lokeshp\Documents\MyWorkspace\JavaScriptProject1\JS\2_JS.js"></script>
+<link type="text/css" href="C:\Users\lokeshp\Documents\MyWorkspace\JavaScriptProject1\CSS\2_CSS.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="calculator">
+    <header>
+    <h1>JS Super-Calculator</h1>
+    <p>The super-calculator shows the result of using different operators</p>
+    <p>JS uses the <b>SWITCH</b> and <b>CASE</b> statements to understand selection, assign values to operations and calculate answer</p>
+    </header>
+    <div class="input-area">
+    <h2>Step 1: Enter the 1st Operand</h2>
+        <input type="text" id="operand1" value="10" />
+        <select id="operand1-type">
+            <option value="number">number</option>
+            <option value="string">string</option>
+        </select>
+    </div>
+    
+    <div class="input-area">
+    <h2>Step 2: Choose an Operator</h2>
+        <div class="operator-choices">
+        <h3>Arithmetic Operators</h3>
+
+        <input type="radio" name="operator" value="+" checked>+&nbsp;
+        <input type="radio" name="operator" value="-" >-&nbsp;
+        <input type="radio" name="operator" value="*" >*&nbsp;
+        <input type="radio" name="operator" value="/">/&nbsp;
+        <input type="radio" name="operator" value="%">%&nbsp;
+     
+        <h3>String Operator</h3>
+        <input type="radio" name="operator" value="concat">+ (concatenation)&nbsp;
+            
+        <h3>Comparison Operators</h3>
+        <input type="radio" name="operator" value="==" >==&nbsp;
+        <input type="radio" name="operator" value="===">===&nbsp;
+        <input type="radio" name="operator" value="!=">!=&nbsp;
+        <input type="radio" name="operator" value="!==">!==&nbsp;
+        <input type="radio" name="operator" value=">">&gt;&nbsp;
+        <input type="radio" name="operator" value=">=">&gt;=&nbsp;
+        <input type="radio" name="operator" value="<">&lt;&nbsp;
+        <input type="radio" name="operator" value="<=">&lt;=&nbsp;
+        </div>
+    </div>
+            
+    <div class="input-area">
+    <h2>Step 3: Enter the 2nd Operand</h2>
+    <input type="text" id="operand2" value="1">
+    <select id="operand2-type">
+        <option value="number">number</option>
+        <option value="string">string</option>
+    </select>
+    </div>
+    
+    <div class="input-area">
+    <h2>Step 4: Click the Button</h2>
+    <input type="submit" id="submit" value="Calculate!">
+    </div>
+<hr>
+    <div class="output-area">
+    <h2>Output</h2>
+ 
+    <h3>Operation</h3>
+    <span id="final-operation">???</span>
+
+    
+    <h3>Return Value:</h3>
+    <span id="result">???</span>
+    </div>
+</div>
+
+<script>
+//when the button is clicked
+document.getElementById("submit").addEventListener("click",calculateIt);
+</script>
+
+ </body>
+</html>

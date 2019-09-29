@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Switch cases</title>
+<script type="text/javascript" src="C:\Users\lokeshp\Documents\MyWorkspace\JavaScriptProject1\JS\6.js"></script>
+</head>
+<body>
+	<p>Example of using user entered options used to print an answer using SWTICH statement</p>
+<label> Enter your favorite day of the week
+	<select id = "daySelected">
+	<option value="Monday">Monday</option>
+	<option value="Tuesday">Tuesday</option>
+	<option value="Wednesday">Wednesday</option>
+	<option value="Thursday">Thursday</option>
+	<option value="Friday">Friday</option>
+	<option value="Saturday">Saturday</option>
+	<option value="Sunday">Sunday</option>
+	</select>
+</label>
+<br/>
+<br/>
+
+<button type= "button" id = "submitOption">Submit</button>
+<br/>
+<br/>
+<div id = "selectedOption"></div>
+<br/>
+<br/>
+<div id = "systemResponse"></div>
+
+<script>
+	document.getElementById("submitOption").addEventListener("click", calculate);
+</script>
+
+</body>
+</html>

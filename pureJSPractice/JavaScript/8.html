@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Math.random() built in function</title>
+<style>
+.Sunny {    background-color: skyblue;    }
+.Partly Sunny {    background-color:aliceblue;    }
+.Partly Cloudy {    background-color:aquamarine    }
+.Raining {    background-color: lightgrey;    }
+.Cloudy {    background-color: #eee;    }    
+.Thunderstorm {    background-color: #333;  color: #fff;    }
+.Foggy	{    background-color:beige   }
+</style>
+</head>
+<body>
+<p>This functions uses the MATH function to do the following:
+<ul>Predicting weather and Temperature for each day of week. You will need to click the button for a week's prediction</ul>
+<ul>Showing the specific weather forcast in different color</ul></p>
+<button id = "run">Run</button>
+<br/>
+<br/>
+<div id = "lokesh" ></div>
+
+<script>
+
+document.getElementById("run").addEventListener("click", generateWeather);
+
+
+function generateWeather() {
+	var days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+
+	var weather = ["Sunny", "Partly Sunny", "Partly Cloudy", "Cloudy", "Raining", "Snowing", "Thunderstorm", "Foggy"];
+
+	var maxTemp = 100;
+
+	var minTemp = 0;
+
+	for (var i = 0; i < days.length; i++) {
+
+    var weatherToday = weather[Math.floor(Math.random() * weather.length)];
+
+    var tempToday = Math.floor(Math.random() * (maxTemp - minTemp) + minTemp);
+
+    document.getElementById("lokesh").innerHTML += "<div id='" + days[i] + "' class='" + weatherToday + "'><b>Forecast for " + days[i] +":</b><br><br>" + weatherToday + " and " + tempToday + " degrees.</div>";
+
+  }
+
+}
+</script>
+</body>
+</html>

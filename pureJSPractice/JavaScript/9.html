@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calculate Factorial</title>
+</head>
+<body>
+<h1>Calculates Factorial for number entered</h1>
+<p>Number entered beyond 170 is calculated as infinity</p>
+<p>Only positive integers are handled</p>
+<label>Enter Number 
+<input id="number" type="text" value=1>
+</label>
+<br/>
+<br/>
+<input id="submit" type="button" value="Press" onclick = "factorial()">
+<br/>
+<br/>
+<div id="showResult">Result will be shown here</div>
+<script>
+function factorial() {
+var x = document.getElementById("number").value;
+for(var f = 1; x >= 1; f *= x, x--);
+document.getElementById("showResult").innerHTML = f;
+}
+</script>
+
+</body>
+</html>

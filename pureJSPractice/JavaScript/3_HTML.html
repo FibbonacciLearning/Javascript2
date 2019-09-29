@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="C:\Users\lokeshp\Documents\MyWorkspace\JavaScriptProject1\JS\3_JS.js"></script>
+<link type="text/css" href="C:\Users\lokeshp\Documents\MyWorkspace\JavaScriptProject1\CSS\3_CSS.css" rel="stylesheet">
+<meta charset="ISO-8859-1">
+<title>Add list items using user inputs and sorting</title>
+</head>
+<body>
+<div id="listPage">
+    
+<h1>My Wish List</h1>
+<p>This program uses X and Y to show how to append user entered data into existing div as list item and apply alphabetical sort to the div contents</p>
+    <div id="formArea">
+        <label>What I want:
+            <input type="text" id="iWant">
+        </label>
+        <button type="button" id="addIt">Add It!</button>
+        <br>
+        <br>
+        <button type="button" id="printable">Sort Your List</button>
+    </div>
+    <br/>
+    <br/>
+</div>
+<div id="wishList"><ul></ul></div>
+
+<script type="text/javascript">
+var printButton = document.getElementById("printable");
+printButton.addEventListener("click", printView);
+
+var addButton = document.getElementById("addIt");
+addButton.addEventListener("click", addTheThing);
+
+var myListArea = document.getElementById("wishList");
+
+</script>
+</body>
+</html>
+
+
