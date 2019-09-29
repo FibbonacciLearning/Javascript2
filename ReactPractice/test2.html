@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>React! React! React!</title>
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <style>
+        #app {
+          padding: 10px;
+          background-color: #EEE;
+        }
+        #app h1 {
+          font-size: 20px;
+          font-family: sans-serif;
+           color: #0080A8;
+        }
+      </style>
+</head>
+ 
+<body>
+<div id="container1"></div>
+</br>
+</br>
+<div id="container2"><h1>this is container 2</h1></div>
+
+<script type="text/babel">
+//ReactDOM.render(<p>Sherlock Holmes</p>, document.getElementById('app'));
+//ReactDOM.render(React.createElement('h1', {}, 'Hello World!'), document.getElementById('app'));
+//the quick borwn fox jumped over the little lazy dog. the quick brown fox jumped over the little lazy dog. the quick brown foxjumped over the little lazy dog.
+class Buttonify extends React.Component {
+  render() {
+    return <div>
+    <button type = {this.props.behavior} > {this.props.children} </button></div>
+  }
+}
+ReactDOM.render(
+  <div>
+    <Buttonify behavior="submit">SEND DATA</Buttonify>
+  </div>,
+  document.querySelector("#container1")
+);
+////////////////////////////////////////////////////////////////////////////////////
+class Circle extends React.Component{
+  render () {
+    var circleStyle = {
+      padding: 10,
+      margin: 10,
+      display: "inline-block",
+      backgroundColor: this.props.bgColor,
+      borderRadius: "50%",
+      width: 100,
+      height: 100,
+    }
+    return (
+      <div style = {circleStyle}></div>
+    )
+  }
+};
+
+ReactDOM.render(
+  <Circle bgColor = "yellow"/> , document.querySelector("#container2")
+);
+
+</script>
+</body>
+ 
+</html>

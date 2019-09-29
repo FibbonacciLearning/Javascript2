@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <meta charset="utf-8">
+  <title>React! React! React!</title>
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <style>
+        #app {
+          padding: 10px;
+          background-color: #EEE;
+        }
+        #app h1 {
+          font-size: 20px;
+          font-family: sans-serif;
+           color: #0080A8;
+        }
+      </style>
+</head>
+ 
+<body>
+<div id="container"></div>
+
+<script type="text/babel">
+//DEfinition of counter component, which outputs / display the counter's current value
+class Counter extends React.Component{
+  render () {
+    var TextStyle = {
+      fontSize : 72,
+      fontFamily : "sans-serif",
+      color : "black",
+      fontWeight : "bold"
+    }
+    return (
+      <div style = {TextStyle}>{this.props.display}</div>
+    )
+  }
+};
+//Definition of incrementor component
+class CounterIncrementor extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            count : 0
+        };
+        this.increase = this.increase.bind(this);
+    };
+    //Function which increments value of object property count when called by OnClick event 
+    increase(e) {
+  var currentCount = this.state.count;
+ //if condition is to check whether keyboard shift key is pressed or not along with mouse click. e is the event which has mouse click and key press properties in-built  
+  if (e.shiftKey) {
+    currentCount += 10;
+  } else {
+    currentCount += 1;
+  }
+ 
+  this.setState({
+    count: currentCount
+  });
+};
+    render () {
+        var backgroundStyle = {
+      padding: 50,
+      backgroundColor: "#FFC53A",
+      width: 250,
+      height: 100,
+      borderRadius: 10,
+      textAlign: "center"
+        };
+        var buttonStyle = {
+      fontSize: "1em",
+      width: 30,
+      height: 30,
+      fontFamily: "sans-serif",
+      color: "#333",
+      fontWeight: "bold",
+      lineHeight: "3px"
+        };
+        return (
+            <div style = {backgroundStyle}>
+                <Counter display = {this.state.count} />
+                <button onClick={this.increase} style = {buttonStyle}> + </button> 
+                </div> //this div creates the view containing display of counter component and button below the counter. Button div also defines onclick handler i.e. increase
+        );
+    }
+}
+
+ReactDOM.render(
+  <CounterIncrementor /> , document.querySelector("#container")
+);
+
+</script>
+</body>
+ 
+</html>

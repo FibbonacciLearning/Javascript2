@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <meta charset="utf-8">
+  <title>React! React! React!</title>
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <style>
+        #app {
+          padding: 10px;
+          background-color: #EEE;
+        }
+        #app h1 {
+          font-size: 20px;
+          font-family: sans-serif;
+           color: #0080A8;
+        }
+      </style>
+</head>
+ 
+<body>
+<div id="container1"></div>
+</br>
+</br>
+<div id="container2"></div>
+
+<script type="text/babel">
+
+/*
+Here we are returning three p tags. They don’t have a single common parent. Now, when you return multiple items, you might or might not have to deal with one detail, depending on the version of React you are targeting. You need to specify a key attribute and a unique value for each item. IF you don't do that then will get a warning in console. Warning: Each child in an array or iterator should have a unique “key” prop.
+*/
+
+class Stuff extends React.Component {
+  render() {
+    return (
+      [
+        <p key= "1">I am</p>,
+        <p key = "2">returning a list</p>,
+        <p key = "3">of things!</p>
+      ]
+    );
+  }
+}
+
+ReactDOM.render(
+<Stuff />
+, document.querySelector("#container1")
+);
+
+//Use of React.Fragment component. There’s no need to specify a unique key attribute and value; this is all taken care of under the covers for you. Also see how to insert comment inside a React component.
+
+class Stuffed extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <p>I am</p>
+        <p>returning a list</p>
+        <p>of things for the namesake!</p>
+        {/* I am a child 
+        comment */}   
+      </React.Fragment>
+    );
+  }
+}
+
+ReactDOM.render(
+<Stuffed />
+, document.querySelector("#container2") //end of line commenting
+/* This comment
+         goes across
+         multiple lines */
+);
+</script>
+</body>
+ 
+</html>

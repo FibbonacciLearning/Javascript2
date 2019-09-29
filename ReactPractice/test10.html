@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <meta charset="utf-8">
+  <title>React! React! React!</title>
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <style>
+    #container {
+      padding: 50px;
+      background-color: #FFF;
+    }
+ 
+    .colorSquare {
+      box-shadow: 0px 0px 25px 0px #333;
+      width: 242px;
+      height: 242px;
+      margin-bottom: 15px;
+    }
+ 
+    .colorArea input {
+      padding: 10px;
+      font-size: 16px;
+      border: 2px solid #CCC;
+    }
+ 
+    .colorArea button {
+      padding: 10px;
+      font-size: 16px;
+      margin: 10px;
+      background-color: #666;
+      color: #FFF;
+      border: 2px solid #666;
+    }
+ 
+    .colorArea button:hover {
+      background-color: #111;
+      border-color: #111;
+      cursor: pointer;
+    }
+  </style>
+</head>
+ 
+<body>
+
+  <div id="container"></div>
+  <br/>
+  <br/>
+  <div>
+Lifecycle methods are special methods that automatically get called as our component goes about its business. They notify us of important milestones in a component’s life, and we can use these notifications to simply pay attention or change what our component is about to do.<br/>
+- componentWillMount (can be used when component is about to mount)<br/>
+- componentDidMount  (can be used after component has just mounted)<br/>
+- componentWillUnmount (can be used when component is about to Unmount)<br/>
+- componentWillUpdate  (can be used when component is about to update)<br/>
+- componentDidUpdate  (can be used when component has just updated)<br/>
+- shouldComponentUpdate (controls initiating update on a component based on a condition. If this method returns true then component will update and if it returns false then component will skip update)<br/>
+componentWillReceiveProps (this method can be used to pass a prop to it. This component needs an argument and this argument contains the new prop value for the component)<br/>
+- componentDidCatch (??????)<br/>
+
+Default Props (this is a property which is used to add/set default property / value to a property in a component. This gets run before your component is even created or any props from parent components are passed in.)<br/>
+
+Whenever there is initial render, following sequence ofinvoking methods can be done<br/>
+1. Default props<br/>
+2. get state<br/>
+3. componentWillMount<br/>
+4. render <br/>
+5. componentDidMount<br/>
+<br/>
+Whenever there is a state change, following sequence of invoking methods can be done<br/>
+ 1. shouldComponentUpdate<br/>
+ 2. componentWillUpdate<br/>
+ 3. render<br/>
+ 4. componentDidUpdate<br/>
+ <br/>
+Whenever there is a prop change, following sequenceof invoking methods can be done<br/>
+1. componentWillReceiveProps<br/>
+2. shouldComponentUpdate<br/>
+3. componentWillUpdate<br/>
+4. render<br/>
+5. componentDidUpdate<br/>
+<br/>
+</div>
+
+<script type="text/babel">
+
+class Colorizer extends React.Component {
+      constructor(props) {
+        super(props);
+ 
+        this.state = {
+          color: "",
+          bgColor: "white"
+        };
+ 
+        this.colorValue = this.colorValue.bind(this);
+        this.setNewColor = this.setNewColor.bind(this);
+      }
+ //e is required to be passed as argument, otherwise we see the color temporarily and then html reloads and sets to default white color
+ //This function first sets state of color to new color
+      colorValue(e) {
+        this.setState({
+          color: e.target.value
+        });
+      }
+ //e is required to be passed as argument, otherwise we see the color temporarily and then html reloads and sets to default white color
+ //This function takes in state of prop color and sets state of prop bgColor to the state of prop color. Prevent default will prevent setting default value = white on bgcolor prop
+      setNewColor(e) {
+        this.setState({
+          bgColor: this.state.color
+        });
+        //this._input.focus();
+        //this._input.value = ""; 
+        e.preventDefault();
+      }
+ 
+      render() {
+        var squareStyle = {
+          backgroundColor: this.state.bgColor
+        };
+ 
+        return (
+          <div className="colorArea">
+            <div style={squareStyle} className="colorSquare"></div>
+ 
+            <form onSubmit={this.setNewColor}>
+              <input onChange={this.colorValue}
+                //ref={ (el) => self._input = el }>
+                placeholder="Enter a color value"></input>
+              <button type="submit">go</button>
+            </form>
+          </div>
+        );
+      }
+    }
+ 
+    ReactDOM.render(
+      <div>
+        <Colorizer />
+      </div>,
+      document.querySelector("#container")
+    );
+
+</script>
+</body>
+ 
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+  <meta charset="utf-8">
+  <title>React! React! React!</title>
+  <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <style>
+        #app {
+          padding: 10px;
+          background-color: #EEE;
+        }
+        #app h1 {
+          font-size: 20px;
+          font-family: sans-serif;
+           color: #0080A8;
+        }
+      </style>
+</head>
+<body>
+<div id="container"></div>
+</br>
+</br>
+<div id="another">lokeshp</div>
+<script type="text/babel">
+
+    class Display extends React.Component {
+        render(){
+            return (
+                <div>
+                    <p>{this.props.name}</p>
+                    <p>{this.props.age}</p>
+                    <p>{this.props.gender}</p>
+                </div>
+            );
+        }
+    };
+
+    class Label extends React.Component {
+        render(){
+            return (
+                    <Display {...this.props} />        
+            );
+        }
+    };
+
+    class Shirt extends React.Component {
+        render(){
+            return (
+                <div>
+                    <Label {...this.props} />       
+                </div>
+            )
+        }
+    };
+    ReactDOM.render(
+    <div>
+    <Shirt name = "Lokesh" age = "39" gender = "Male" />
+    </div>,
+    document.querySelector("#container")
+    );    
+//Another example isas below. we can't use same names as class names as babel will throw duplicate class name error otherwise.
+
+    class Displayed extends React.Component {
+    render() {
+        return (
+            <div>
+                <p>{this.props.color}</p>
+                <p>{this.props.num}</p>
+                <p>{this.props.size}</p>
+            </div>
+        );
+    }
+    };
+    
+    class Labeled extends React.Component {
+    render() {
+        return (
+            <Displayed  {...this.props}/>
+        );
+    }
+    };
+    
+    class Shirted extends React.Component {
+    render() {
+        return (
+            <Labeled  {...this.props}/>
+        );
+    }
+    };
+    
+    ReactDOM.render(
+    <Shirted color="steel blue" num="3.14" size="medium" />
+    , document.querySelector("#another")
+    );
+
+/*
+React enforces a chain of command in which properties have to flow down from a parent component to an immediate child component. This means you can’t skip a layer of children when sending a property. This also means your children can’t send a property back up to a parent. All communication is one-way from the parent to the child.
+
+The spread operator allows you to unwrap an array into its individual elements. For Example, 
+printStuff(...items); 
+
+As created by the ES6/ES2015 committee, the spread operator is designed to work only on arrays and arraylike creatures (a.k.a. something that has a Symbol.iterator property). The fact that it works on object literals such as our props object is a result of React extending the standard. No browser currently supports using the spread object on object literals. Our example works because of Babel.
+*/
+
+
+</script>
+</body>
