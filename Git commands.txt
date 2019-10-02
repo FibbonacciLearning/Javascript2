@@ -1,0 +1,38 @@
+git init 
+- command used to create a .git repository inside the current folder path. The .git folder may be hidden in Windows. 
+
+git status 
+- command used to understand status of files inside the current folder. gives a list of files untracked, comitted etc.
+
+git add pureJSPractice/
+- command used to add files or folders to be committed. The new files to be added are shown in green color when you run git status. So, all files under the folder mentioned in the command are now staged.
+
+git rm --cached pureJSPractice/ -r
+- command used to remove from repository the specified file/folder
+
+git commit -m "comments"
+- command used to commit the staged files to git repo 
+
+git log 
+- command gives a log of the last commit with date, time, user credentails and comments
+
+git remote add origin https://github.com/FibbonacciLearning/Javascript2.git
+- command used to link the github online repo at the url provided to local repo 
+
+git remote remove origin
+- command used to remove the link to online url path specified in the add command
+
+git remote set-url origin <new url>
+- command used to replace previous origin url with new url 
+
+git remote -v
+- command gives status of link done by previous command i.e. it tells what is the online (origin) folder to which the local repo will push the local data
+
+git push -u origin master
+- command to actually push to the master branch at the online (origin) folder. After this is done you can check the online repo to see the files added, changed
+
+git pull origin master
+- command to pull the online repo (origin) to local (it encapsulates fetch and merge)
+
+git clone https://github.com/FibbonacciLearning/JavaScript.git
+- command to pull content from online repo to current local path

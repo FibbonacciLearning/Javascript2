@@ -1,0 +1,36 @@
+<head>
+    <title>React Learning Notes</title>
+    <style>
+        body {
+            background-color: black;
+            color: beige
+        }
+    </style>
+</head>
+<body>
+    <h2>Some points to install, start and stop react projects - Dev environment</h2>
+    <ul>
+        <li>install Node on local pc. this will also install NPM</li>
+        <li>then install create-react-app using NPM command</li>
+        <li>then open VS code and go to / create folder where you want the project folder</li>
+        <li>then open terminal on that folder and run command create-react-app + <\name of the project folder></li>
+        <li>when this is done, go to the new project folder in the terminal and run command npm start or yarn start. This will launch the index.html page from the public folder in the project folder</li>
+        <li>To stop the NPM server press Ctrl + C</li>
+        <li>Another way to stop NPM server is to just close the vs code window</li>
+        <li>To install an external library enter command npm i -S <\name of the library>\></li>
+        <li>To install React Router into the app, go to app folder in terminal and before doing npm start, run command npm i react-router-dom --save</li>
+    </ul>
+    <h2>Uncontrolled Components vs. Controlled Components</h2>
+    <p>
+        Form elements are interesting. These are elements that contain some state on their own. For example, your text element might have some content in it, or you might have some items already selected in a drop-down list. React is all about centralizing state into its own little world, so it doesn’t like that form elements have their own internal mechanism for storing state. The guidance is to synchronize all the form data inside a React component by using events such as onChange. These components that let React deal with form elements are known as controlled components.</p>
+    <p>
+        Still, it’/s a hassle to have every form element deal with keeping state in sync. The React developers get that as well. The workaround is to do nothing. We simply let form elements deal with their own state and use refs to access the values when needed. That’s what we did in this example. When we have components that defer all state management to the form DOM element, these components are known as uncontrolled components.
+    </p>
+    <h2>Redux notes</h2>
+    <ul>
+        <li>Your entire application’s state is stored in a single location. You don’t have to search across a variety of data stores to find the part of your state you want to update. Keeping everything stored in a single location also ensures that you don’t have to worry about keeping all of this data in sync.</li>
+        <li>Your state should be read-only and can be modified only through actions. As you saw in the diagram earlier, in a Redux world, you need to ensure that random parts of your app can’t access the Store and modify the state stored inside it. The only way our app can modify what is in the Store is by relying on actions.</li>
+        <li>You specify what the final state should be. To keep things simple, your state is never modified or mutated. You use a reducer to specify what the final result of your state should be.</li>
+    </ul>
+    <p>These three principles might seem a bit abstract, but as you start to write some Redux code, you’ll see them put into practice.</p>
+</body>
