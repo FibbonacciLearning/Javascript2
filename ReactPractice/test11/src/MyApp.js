@@ -3,9 +3,9 @@ import "./style.css";
 
 function MyApp() {
     return (
-    <div>
+    <div className="p">
       <input type="checkbox" />
-      <p className="p">Placeholder text here</p>
+      <p>Placeholder text here</p>
       <input type="checkbox" />
       <p>Placeholder text here</p>
       <input type="checkbox" />
