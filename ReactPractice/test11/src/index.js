@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
 //import MyApp from "./MyApp";
-import ContactCard from "./ContactCard";
-
+//import ContactCard from "./ContactCard";
+import CardAggregation from "./PlayingCardAggregation";
 
 ReactDOM.render(
     //<MyApp />
-    <ContactCard />
+    <CardAggregation />
      ,
    document.querySelector("#root")
  );
