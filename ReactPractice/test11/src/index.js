@@ -2,13 +2,13 @@ import React from "react";
 import ReactDOM from "react-dom";
 //import MyApp from "./MyApp";
 //import ContactCard from "./ContactCard";
-import CardAggregation from "./PlayingCardAggregation";
+//import CardAggregation from "./PlayingCardAggregation";
+//import App1 from "./DummyClass"
+import App2 from "./DummyCLassStateChange"
 
 ReactDOM.render(
-    //<MyApp />
-    <CardAggregation />
-     ,
-   document.querySelector("#root")
+  <App2 />,
+  document.querySelector("#root")
  );
 
 
