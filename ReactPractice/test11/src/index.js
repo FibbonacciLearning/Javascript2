@@ -4,10 +4,13 @@ import ReactDOM from "react-dom";
 //import ContactCard from "./ContactCard";
 //import CardAggregation from "./PlayingCardAggregation";
 //import App1 from "./DummyClass"
-import App2 from "./DummyCLassStateChange"
+//import App2 from "./DummyCLassStateChange"
+//import App3 from "./App3_fetch"
+//import App4 from "./App4_forms"
+import App5 from "./App5_forms"
 
 ReactDOM.render(
-  <App2 />,
+  <App5 />,
   document.querySelector("#root")
  );
 
