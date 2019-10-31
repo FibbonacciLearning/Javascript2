@@ -1,10 +1,9 @@
 import React from "react";
-import PlayingCardData from "./PlayingCardData";
-import PlayingCard from "./PlayingCard";
+import CardData from "./App1_CardData";
+import Card from "./App1_Card";
 
-function CardAggregation() {
-    const FilteredList = PlayingCardData.filter(card => card.rank === "six" && card.suit === "diamonds")
-    const CardComponents = FilteredList.map(card => <PlayingCard key = {Math.random()}  card = {card} />);
+function ContactCard() {
+    const CardComponents = CardData.map(card => <Card key = {card.id}  card = {card} />);
     return(
         <div>
             {CardComponents}
@@ -12,7 +11,7 @@ function CardAggregation() {
     )
 };
 
-export default CardAggregation; 
+export default ContactCard; 
 
 // function ContactCard(props){
 //     console.log(props);

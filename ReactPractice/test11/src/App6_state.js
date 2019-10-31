@@ -1,13 +1,14 @@
 import React from "react";
+import './style.css';
 
-// class App1 extends React.Component{
+// class App6_state extends React.Component{
 //     render(){
 //         const currentDate = new Date();
 //         return <h1>{currentDate.getDate()} / {currentDate.getMonth()} / {currentDate.getFullYear()}</h1>
 //     }
 // };
 
-// class App1 extends React.Component{
+// class App6_state extends React.Component{
 //     constructor(){
 //         super()
 //         this.State = {answer: 'yes sir', another: 'no sir'};
@@ -17,20 +18,20 @@ import React from "react";
 //     }
 // }
 
-class App1 extends React.Component{
+class StateDisplay extends React.Component{
     constructor(){
         super()
-        this.state = {loggedInState: false};
+        this.state = {loggedInState: true};
     }
     render(){
         let displayWord;
         if(this.state.loggedInState === true){displayWord = 'In'}else{displayWord = 'Out'}
         return (
         <div>
-            <h1>You are currently logged {displayWord}?</h1>
+            <h1>You are currently logged <p>{displayWord}</p></h1>
         </div>
         )
     }
 }
 
-export default App1
+export default StateDisplay

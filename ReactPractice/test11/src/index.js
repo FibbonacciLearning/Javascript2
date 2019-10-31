@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom";
-//import MyApp from "./MyApp";
-//import ContactCard from "./ContactCard";
-//import CardAggregation from "./PlayingCardAggregation";
-//import App1 from "./DummyClass"
-//import App2 from "./DummyCLassStateChange"
+
+//import ContactCard from "./App1_ContactCard";
+//import CardAggregation from "./App2_PlayingCardAggregation";
+//import StateDisplay from "./App6_state"
+//import StateChange from "./App7_StateChange"
 //import App3 from "./App3_fetch"
 //import App4 from "./App4_forms"
 import App5 from "./App5_forms"
