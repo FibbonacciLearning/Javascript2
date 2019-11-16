@@ -1,0 +1,6 @@
+[
+    {"code":"P01", "name": "Traditional Merlot", "price": 4.5},
+    {"code":"P02", "name": "Classic Chianti", "price": 5.3},
+    {"code":"P03", "name": "Chardonnay", "price": 4.0},
+    {"code":"P04", "name": "Brunello di Montalcino", "price": 7.5}
+]
